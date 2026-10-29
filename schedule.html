@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予定登録 - ギリギリ防止くん</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="app-title">予定を登録する</h1>
+        <p class="app-desc">起床時刻と出発時刻を計算するための予定を登録します</p>
+    </header>
+
+    <main class="main-layout">
+
+        <section class="task-card">
+            <h2 class="section-title">予定の入力</h2>
+
+            <label class="form-label">予定名</label>
+            <input type="text" id="scheduleName" class="form-input" placeholder="例：学校に行く">
+
+            <label class="form-label">開始時刻</label>
+            <input type="time" id="startTime" class="form-input">
+
+            <label class="form-label">終了時刻（出発時刻）</label>
+            <input type="time" id="endTime" class="form-input">
+
+            <button id="saveScheduleBtn" class="main-btn">保存する</button>
+        </section>
+
+        <section class="task-card">
+            <h2 class="section-title">登録済みの予定</h2>
+            <div id="scheduleList"></div>
+        </section>
+
+        <a href="index.html" class="back-btn">← メイン画面に戻る</a>
+
+    </main>
+
+    <script src="ja/schedule.js"></script>
+</body>
+</html>

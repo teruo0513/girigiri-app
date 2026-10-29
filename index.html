@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ギリギリ防止くん</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1 class="app-title">ギリギリ防止くん</h1>
+    <p class="app-desc">寝坊による遅刻を防ぐための予定逆算アプリ</p>
+  </header>
+
+  <main class="main-layout">
+
+    <!-- ★ スマホで一番上にしたい現在時刻カード ★ -->
+    <div class="time-card fade-in">
+      <h2 class="time-title">現在時刻</h2>
+      <p class="time-value" id="currentTime">--:--</p>
+    </div>
+
+    <!-- 左：朝の準備タスク -->
+    <section class="left-panel">
+
+      <!-- 次の予定カード -->
+      <section id="nextSchedule" class="card fade-in">
+        <h2 class="card-title">次の予定</h2>
+        <div id="scheduleInfo" class="card-content">
+            <p>予定がまだ登録されていません。</p>
+        </div>
+      </section>
+
+      <div class="task-card fade-in">
+
+        <!-- タスク追加フォーム -->
+        <div class="task-add-card fade-in">
+          <h2 class="task-add-title">タスクを追加する</h2>
+          <input type="text" id="taskInput" class="task-input" placeholder="例：水筒にお茶を入れる">
+          <button id="addTaskBtn" class="task-add-btn">追加する</button>
+        </div>
+
+        <h2 class="section-title">朝の準備</h2>
+
+        <!-- 進捗バー -->
+        <div class="progress-area">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text"><span id="doneCount">0</span> / <span id="totalCount">7</span> 完了</p>
+        </div>
+
+        <!-- タスク一覧 -->
+        <div class="task-list">
+          <button class="task-btn">起きる</button>
+          <button class="task-btn">顔を洗う</button>
+          <button class="task-btn">朝ごはん</button>
+          <button class="task-btn">着替え</button>
+          <button class="task-btn">くつした</button>
+          <button class="task-btn">髪の毛</button>
+          <button class="task-btn">持ち物チェック</button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 右：起床時刻＋カウントダウン -->
+    <section class="right-panel">
+
+      <!-- 起床時刻カード（青） -->
+      <div class="wake-card fade-in">
+        <h2 class="wake-title">起床時刻</h2>
+        <p class="wake-value" id="wakeTime">--:--</p>
+      </div>
+
+      <!-- カウントダウンカード（白＋オレンジ） -->
+      <div class="count-card fade-in">
+
+        <!-- 出発時刻の設定フォーム -->
+        <div class="leave-set-card">
+          <h2 class="leave-set-title">出発時刻を設定する</h2>
+          <input type="time" id="leaveInput" class="leave-input">
+          <button id="setLeaveBtn" class="leave-btn">設定する</button>
+        </div>
+
+        <h2 class="count-title">出発までのこり時間</h2>
+        <p class="count-value" id="countdown">--:--:--</p>
+        <p class="leave-time">出発時刻：<span id="leaveTime">07:30</span></p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <audio id="alarmSound" src="audio/Pocket_Watch02-01(Tick-Hand-Lid-Open).mp3" preload="auto"></audio>
+
+  <script src="ja/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+/* 全体 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5fbff;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* ヘッダー */
+.header {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #004466;
+}
+
+.app-desc {
+  font-size: 14px;
+  color: #226699;
+}
+
+/* レイアウト（PCは左右、スマホは縦） */
+.main-layout {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex: 2;
+  min-width: 300px;
+}
+
+.right-panel {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* カード共通 */
+.task-card,
+.time-card,
+.count-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e3f0ff;
+}
+
+/* セクションタイトル */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #004466;
+  margin-bottom: 16px;
+}
+
+/* 進捗バー */
+.progress-area {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e6f3ff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ffcc66, #ff9966);
+  transition: width 0.3s;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #226699;
+  margin-top: 6px;
+}
+
+/* タスクボタン */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-btn {
+  background: #e6f7ff;
+  border: 2px solid #66aaff;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  color: #004466;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.task-btn:hover {
+  background: #d0efff;
+}
+
+.task-btn.done {
+  background: #66dd88;
+  border-color: #44bb66;
+  color: #004422;
+}
+
+/* 現在時刻カード（黄色） */
+.time-card {
+  background: #ffcc33;
+  color: #ffffff;
+  text-align: center;
+}
+
+.time-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.time-value {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* カウントダウンカード（白＋オレンジ） */
+.count-card {
+  text-align: center;
+}
+
+.count-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff6600;
+}
+
+.count-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+.leave-time {
+  font-size: 14px;
+  color: #004466;
+}
+
+/* スマホ対応 */
+@media (max-width: 720px) {
+  .main-layout {
+    flex-direction: column;
+  }
+}
+/* 出発時刻設定カード */
+.leave-set-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e3f0ff;
+  text-align: center;
+}
+
+.leave-set-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #004466;
+  margin-bottom: 12px;
+}
+
+.leave-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #66aaff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.leave-btn {
+  background: #ffcc66;
+  color: #664200;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(255, 153, 0, 0.6);
+}
+
+.leave-btn:hover {
+  background: #ffdd88;
+}
+/* タスク追加カード */
+.task-add-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e3f0ff;
+  margin-top: 20px;
+}
+
+.task-add-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #004466;
+  margin-bottom: 12px;
+}
+
+.task-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #66aaff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.task-add-btn {
+  background: #ffcc66;
+  color: #664200;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(255, 153, 0, 0.6);
+}
+
+.task-add-btn:hover {
+  background: #ffdd88;
+}
+
+/* 削除ボタン */
+.delete-btn {
+  background: #ff6666;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.form-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #004466;
+    margin-top: 10px;
+    display: block;
+}
+
+.form-input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #66aaff;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #004466;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* 次の予定カード */
+#nextSchedule {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e3f0ff;
+  margin-bottom: 20px;
+}
+
+#nextSchedule .card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #004466;
+  margin-bottom: 12px;
+}
+
+#scheduleInfo {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+#scheduleInfo strong {
+  display: block;
+  font-size: 18px;
+  color: #0066aa;
+  margin-bottom: 8px;
+}
+
+#scheduleInfo p {
+  margin: 4px 0;
+}
+
+/* 予定カードのアクセントライン */
+#nextSchedule::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #66aaff;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+.wake-card {
+  background: #e6f3ff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+}
+
+.wake-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #004466;
+  margin-bottom: 10px;
+}
+
+.wake-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0066aa;
+}
+/* ふわっとフェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.task-btn {
+  transition: transform 0.15s ease;
+}
+
+.task-btn:active {
+  transform: scale(0.95);
+}
+.task-btn.done {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+/* スマホ表示調整（縦長防止） */
+@media screen and (max-width: 768px) {
+  .time-card {
+    height: auto;           /* 高さを自動にする */
+    padding: 20px;          /* 内側の余白を少し広げる */
+    text-align: center;     /* 中央寄せ */
+  }
+
+  .time-value {
+    font-size: 2.5rem;      /* 数字を少し小さくしてバランス調整 */
+  }
+}
+/* PC表示調整（現在時刻カードの縦長防止） */
+@media screen and (min-width: 769px) {
+  .time-card {
+    height: 180px;          /* 高さを固定して縦長防止 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 中央寄せ */
+    align-items: center;
+  }
+
+  .time-value {
+    font-size: 2.8rem;      /* PCでは少し大きめに */
+  }
+}
